@@ -30,9 +30,9 @@ class AddressMsgComponent extends React.Component {
         var img2 = document.getElementsByClassName('useraddresslx-gsjt-fam-img')[0]
         var img3 = document.getElementsByClassName('useraddresslx-gsjt-defaul-img')[0]
         console.log(img1.src)
-        if(img1.src == "http://10.3.133.21:3002/src/static/images/myGzxOrder/check-on.png"){
+        if(img1.src == "http://192.168.1.101:3002/src/static/images/myGzxOrder/check-on.png"){
             addressuseraddresslx = "公司"
-        }else if(img2.src = "http://10.3.133.21:3002/src/static/images/myGzxOrder/check-on.png"){
+        }else if(img2.src = "http://192.168.1.101:3002/src/static/images/myGzxOrder/check-on.png"){
             addressuseraddresslx = "家庭"
         }
         var time = new Date();
@@ -49,9 +49,9 @@ class AddressMsgComponent extends React.Component {
         // console.log('类型' + addressuseraddresslx)
         console.log('当前时间' + myDate)
         var addressuseraddressDefault
-        // console.log(img3.src == 'http://10.3.133.21:3002/src/static/images/myGzxOrder/default-on.png')
+        // console.log(img3.src == 'http://192.168.1.101:3002/src/static/images/myGzxOrder/default-on.png')
         
-        if(img3.src == 'http://10.3.133.21:3002/src/static/images/myGzxOrder/default-on.png'){
+        if(img3.src == 'http://192.168.1.101:3002/src/static/images/myGzxOrder/default-on.png'){
             addressuseraddressDefault = '1'
             // console.log(111);
             this.props.addressMsgSetDefault(addressusername, addressuserphone, phone, addresssheng, addressusercity, addressuserqu, addressuseraddress, addressuseraddresslx, myDate, addressuseraddressDefault).then(response => {
@@ -70,7 +70,7 @@ class AddressMsgComponent extends React.Component {
                     
                 }
             })
-        }else if(img3.src == 'http://10.3.133.21:3002/src/static/images/myGzxOrder/default-close.png'){
+        }else if(img3.src == 'http://192.168.1.101:3002/src/static/images/myGzxOrder/default-close.png'){
             this.props.addressMsgSetNoDefault(addressusername, addressuserphone, phone, addresssheng, addressusercity, addressuserqu, addressuseraddress, addressuseraddresslx, myDate, addressuseraddressDefault).then(response => {
                 if(response.type == 'SUCCESS'){
                     // console.log(response)
@@ -101,7 +101,7 @@ class AddressMsgComponent extends React.Component {
     setAddressToDefaultMethod(){
         var img3 = document.getElementsByClassName('useraddresslx-gsjt-defaul-img')[0]
         //console.log(img3.src)
-        if(img3.src == "http://10.3.133.21:3002/src/static/images/myGzxOrder/default-on.png"){
+        if(img3.src == "http://192.168.1.101:3002/src/static/images/myGzxOrder/default-on.png"){
             img3.setAttribute('src',"../../src/static/images/myGzxOrder/default-close.png")
         }else{
             img3.setAttribute('src',"../../src/static/images/myGzxOrder/default-on.png")
