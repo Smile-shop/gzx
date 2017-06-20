@@ -63,27 +63,32 @@ class LoginComponent extends React.Component {
         }             
     }
 
-
+    toLastHandler(){
+         history.go(-1);
+    }
     render() {
         return (
             <div className="login">
                 <div className="login-top">
-                    <Link to="/mygzx" className="toLastPage">
+                    <Link onClick={this.toLastHandler.bind(this)} className="toLastPage">
                         <i className="iconfont icon-fanhui"></i>
                     </Link>
                     <h4>登录果真鲜</h4>
                 </div>
                 <div className="login-title">
-                    <span>GUOZX</span>
+                    <i className="iconfont icon-iconshuiguo"></i>
                 </div>
                 <ul className="loginUl">
                     <li className="loginLi">
                         <input type="text" ref="username" placeholder="请输入您的用户名" className= "username" />
                         <i className="iconfont icon-yonghuxingming01"></i>
+                        <i className="iconfont icon-shanchu" className="loginPasswordDel"></i>
                     </li>
                     <li className="loginLi">
-                        <input type="text" ref="password" placeholder="请输入您的密码" className="password" />
+                        <input type="password" ref="password" placeholder="请输入您的密码" className="password" />
                         <i className="iconfont icon-yuechi"></i>
+                        <i className="iconfont icon-shanchu" className="loginPasswordDel"></i>
+                        <i className="iconfont icon-keshi" className="loginPasswordKes"></i>
                     </li>
                     <li className="loginLi">
                         <input type="text" ref="verificationCode" placeholder="请输入验证码" className="verificationCode" onBlur={this.validate.bind(this)}/>
